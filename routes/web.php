@@ -6,8 +6,9 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\BiosController;
-
-
+use App\Http\Controllers\EducationsController;
+use App\Http\Controllers\SocialsController;
+use App\Http\Controllers\SkillsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,4 +70,32 @@ Route::get('/console/bios/edit/{bio:id}', [BiosController::class, 'editForm'])->
 Route::post('/console/bios/edit/{bio:id}', [BiosController::class, 'edit'])->where('bio', '[0-9]+')->middleware('auth');
 Route::get('/console/bios/delete/{bio:id}', [BiosController::class, 'delete'])->where('bio', '[0-9]+')->middleware('auth');
 
+
+Route::get('/console/educations/list', [EducationsController::class, 'list'])->middleware('auth');
+Route::get('/console/educations/add', [EducationsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/educations/add', [EducationsController::class, 'add'])->middleware('auth');
+Route::get('/console/educations/edit/{education:id}', [EducationsController::class, 'editForm'])->where('education', '[0-9]+')->middleware('auth');
+Route::post('/console/educations/edit/{education:id}', [EducationsController::class, 'edit'])->where('education', '[0-9]+')->middleware('auth');
+Route::get('/console/educations/delete/{education:id}', [EducationsController::class, 'delete'])->where('education', '[0-9]+')->middleware('auth');
+
+
+Route::get('/console/socials/list', [SocialsController::class, 'list'])->middleware('auth');
+Route::get('/console/socials/add', [socialsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/socials/add', [socialsController::class, 'add'])->middleware('auth');
+Route::get('/console/socials/edit/{social:id}', [SocialsController::class, 'editForm'])->where('social', '[0-9]+')->middleware('auth');
+Route::post('/console/socials/edit/{social:id}', [SocialsController::class, 'edit'])->where('social', '[0-9]+')->middleware('auth');
+Route::get('/console/socials/delete/{social:id}', [SocialsController::class, 'delete'])->where('social', '[0-9]+')->middleware('auth');
+Route::get('/console/socials/image/{social:id}', [SocialsController::class, 'imageForm'])->where('social', '[0-9]+')->middleware('auth');
+Route::post('/console/socials/image/{social:id}', [SocialsController::class, 'image'])->where('social', '[0-9]+')->middleware('auth');
+
+
+
+Route::get('/console/skills/list', [SkillsController::class, 'list'])->middleware('auth');
+Route::get('/console/skills/add', [SkillsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/skills/add', [SkillsController::class, 'add'])->middleware('auth');
+Route::get('/console/skills/edit/{skill:id}', [SkillsController::class, 'editForm'])->where('skill', '[0-9]+')->middleware('auth');
+Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit'])->where('skill', '[0-9]+')->middleware('auth');
+Route::get('/console/skills/delete/{skill:id}', [SkillsController::class, 'delete'])->where('skill', '[0-9]+')->middleware('auth');
+Route::get('/console/skills/image/{skill:id}', [SkillsController::class, 'imageForm'])->where('skill', '[0-9]+')->middleware('auth');
+Route::post('/console/skills/image/{skill:id}', [SkillsController::class, 'image'])->where('skill', '[0-9]+')->middleware('auth');
 

@@ -6,6 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Type;
 use App\Models\User;
 use App\Models\Project;
+use App\Models\Skill;
+use App\Models\Bio;
+use App\Models\Contact;
+use App\Models\Education;
+use App\Models\Social;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,5 +66,31 @@ Route::get('/projects/profile/{project?}', function(Project $project){
 
     return $project;
 
+
 });
+Route::get('/skills', function(){
+    $skills = Skill::orderBy('title')->get();
+    return $skills;
+});
+
+Route::get('/socials', function(){
+    $socials =Social::orderBy('title')->get();
+    return $socials;
+});
+
+Route::get('/educations', function(){
+    $educations =Education::orderBy('title')->get();
+    return $educations;
+});
+
+Route::get('/bios', function(){
+    $bios =Bio::orderBy('info')->get();
+    return $bios;
+});
+
+Route::get('/contacts', function(){
+    $contacts =Contact::orderBy('title')->get();
+    return $contacts;
+});
+
 

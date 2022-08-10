@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\BiosController;
+use App\Http\Controllers\ContactsController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -68,5 +69,14 @@ Route::post('/console/bios/add', [BiosController::class, 'add'])->middleware('au
 Route::get('/console/bios/edit/{bio:id}', [BiosController::class, 'editForm'])->where('bio', '[0-9]+')->middleware('auth');
 Route::post('/console/bios/edit/{bio:id}', [BiosController::class, 'edit'])->where('bio', '[0-9]+')->middleware('auth');
 Route::get('/console/bios/delete/{bio:id}', [BiosController::class, 'delete'])->where('bio', '[0-9]+')->middleware('auth');
+
+
+Route::get('/console/contacts/list', [ContactsController::class, 'list'])->middleware('auth');
+Route::get('/console/contacts/add', [ContactsController::class, 'addForm'])->middleware('auth');
+Route::post('/console/contacts/add', [ContactsController::class, 'add'])->middleware('auth');
+Route::get('/console/contacts/edit/{contact:id}', [ContactsController::class, 'editForm'])->where('contact', '[0-9]+')->middleware('auth');
+Route::post('/console/contacts/edit/{contact:id}', [ContactsController::class, 'edit'])->where('contact', '[0-9]+')->middleware('auth');
+Route::get('/console/contacts/delete/{contact:id}', [ContactsController::class, 'delete'])->where('contact', '[0-9]+')->middleware('auth');
+
 
 

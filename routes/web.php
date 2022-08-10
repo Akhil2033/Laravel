@@ -6,15 +6,12 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TypesController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\BiosController;
-<<<<<<< HEAD
 use App\Http\Controllers\ContactsController;
 
 
-=======
 use App\Http\Controllers\EducationsController;
 use App\Http\Controllers\SocialsController;
 use App\Http\Controllers\SkillsController;
->>>>>>> 326e0da43346597a107860a780aeb966c12414ce
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,16 +74,6 @@ Route::post('/console/bios/edit/{bio:id}', [BiosController::class, 'edit'])->whe
 Route::get('/console/bios/delete/{bio:id}', [BiosController::class, 'delete'])->where('bio', '[0-9]+')->middleware('auth');
 
 
-<<<<<<< HEAD
-Route::get('/console/contacts/list', [ContactsController::class, 'list'])->middleware('auth');
-Route::get('/console/contacts/add', [ContactsController::class, 'addForm'])->middleware('auth');
-Route::post('/console/contacts/add', [ContactsController::class, 'add'])->middleware('auth');
-Route::get('/console/contacts/edit/{contact:id}', [ContactsController::class, 'editForm'])->where('contact', '[0-9]+')->middleware('auth');
-Route::post('/console/contacts/edit/{contact:id}', [ContactsController::class, 'edit'])->where('contact', '[0-9]+')->middleware('auth');
-Route::get('/console/contacts/delete/{contact:id}', [ContactsController::class, 'delete'])->where('contact', '[0-9]+')->middleware('auth');
-
-
-=======
 Route::get('/console/educations/list', [EducationsController::class, 'list'])->middleware('auth');
 Route::get('/console/educations/add', [EducationsController::class, 'addForm'])->middleware('auth');
 Route::post('/console/educations/add', [EducationsController::class, 'add'])->middleware('auth');
@@ -114,5 +101,4 @@ Route::post('/console/skills/edit/{skill:id}', [SkillsController::class, 'edit']
 Route::get('/console/skills/delete/{skill:id}', [SkillsController::class, 'delete'])->where('skill', '[0-9]+')->middleware('auth');
 Route::get('/console/skills/image/{skill:id}', [SkillsController::class, 'imageForm'])->where('skill', '[0-9]+')->middleware('auth');
 Route::post('/console/skills/image/{skill:id}', [SkillsController::class, 'image'])->where('skill', '[0-9]+')->middleware('auth');
->>>>>>> 326e0da43346597a107860a780aeb966c12414ce
 

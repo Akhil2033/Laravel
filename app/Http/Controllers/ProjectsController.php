@@ -96,7 +96,7 @@ class ProjectsController extends Controller
     {
         return view('projects.image', [
             'project' => $project,
-        ]);
+        ]);  
     }
 
     public function image(Project $project)

@@ -10,8 +10,7 @@
         <tr class="w3-red">
             <th></th>
             <th>Title</th>
-            
-         
+            <th>URL</th>
             <th>Created</th>
             <th></th>
             <th></th>
@@ -25,7 +24,7 @@
                     @endif
                 </td>
                 <td>{{$skill->title}}</td>
-                
+                <td><a href="{{$skill->url}}">{{$skill->title}}</a></td>
                 <td>{{$skill->created_at->format('M j, Y')}}</td>
                 <td><a href="/console/skills/image/{{$skill->id}}">Image</a></td>
                 <td><a href="/console/skills/edit/{{$skill->id}}">Edit</a></td>

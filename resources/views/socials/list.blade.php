@@ -10,8 +10,7 @@
         <tr class="w3-red">
             <th></th>
             <th>Title</th>
-            
-         
+            <th>URL</th>
             <th>Created</th>
             <th></th>
             <th></th>
@@ -25,7 +24,7 @@
                     @endif
                 </td>
                 <td>{{$social->title}}</td>
-                
+                <td><a href="{{$social->url}}">{{$social->title}}</a></td>
                 <td>{{$social->created_at->format('M j, Y')}}</td>
                 <td><a href="/console/socials/image/{{$social->id}}">Image</a></td>
                 <td><a href="/console/socials/edit/{{$social->id}}">Edit</a></td>

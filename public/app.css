@@ -1,3 +1,13 @@
-body {
-    
+#dashboard  {
+    list-style-type: none;
+    font-size: 1.5em;
+}
+
+#dashboard li {
+    padding: 1em;
+    align-items: center;
+}
+
+#dashboard li:hover {
+    color: red;
 }
